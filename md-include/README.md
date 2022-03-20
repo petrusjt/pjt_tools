@@ -10,7 +10,7 @@ The script looks for lines beginning with `#![` and ending with `]!#` and recurs
 
 ### CLI usage
 ```
-python3 md_include <input file>
+python3 md_include.py <input file>
 ```
 
 The output is saved as `<input file>_out.md`.
