@@ -28,7 +28,3 @@ The output is saved as `<input file>_out.md`.
 #### Note:
 
 Includes can be nested. So topic_one.md can include topic_one_one.md for example.
-
-### Warning
-
-Includes from parent directories may not work. Haven't tested it, and probably won't.
