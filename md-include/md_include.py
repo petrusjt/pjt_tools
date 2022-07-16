@@ -23,7 +23,7 @@ def interpolate_content(content: List[str], path: str = "") -> List[str]:
 
 
 def include_recursive(filename_args: str, path: str = "") -> List[str]:
-    filename = filename_args.split(FILE_ARG_SEP)[0]
+    filename = filename_args.split(FILE_ARG_SEP)[0].strip()
     with codecs.open(path + filename, encoding="utf-8-sig") as file:
         new_path = f"{path}/{'/'.join(filename_args.split('/')[:-1])}/" if '/' in filename else path
         if len(new_path) > 0 and new_path[0] == "/":
@@ -31,7 +31,7 @@ def include_recursive(filename_args: str, path: str = "") -> List[str]:
 
         asd = read_lines(file)
         if FILE_ARG_SEP in filename_args:
-            asd = interpolate_arguments(asd, filename_args.split(FILE_ARG_SEP)[1].split())
+            asd = interpolate_arguments(asd, filename_args.split(FILE_ARG_SEP)[1].strip().split())
         return interpolate_content(asd, new_path)
 
 
